@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Kilogramos a Onzas y Libras</title>
+  <style>
+    #resultado {
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <main align="center">
+    <div class="px-4 py-2 my-2 text-center border-bottom">
+      <img class="d-block mx-auto mb-2" src="SENATI-LOGO (1).png" alt="Logo" width="30%" height="30%">
+      <h1 class="display-5 fw-bold">Kilogramos a Onzas y Libras</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-0">Conversiones de kilogramos a Onzas y Libras</p>
+        <p class="lead mb-4">Programado por Geoffrey</p>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <div class="row text-center">
+        <div class="col-12 col-md-4 offset-md-4">
+          <form>
+            <div class="mb-3">
+              <label class="form-label" for="kilogramos">Kilogramos: <span id="lbl-kilogramos">0</span></label>
+              <input class="form-range" type="range" min="0" max="200" id="kilogramos" oninput="cambiarKilogramos();">
+              <div class="form-text">Desliza para cambiar el valor</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="resultado">Resultado</label>
+              <div id="resultado">0 kilogramos son 0 onzas y 0 libras</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    function cambiarKilogramos() {
+      var kilogramos = document.getElementById("kilogramos").value;
+      document.getElementById("lbl-kilogramos").innerHTML = kilogramos;
+
+      var onzas = kilogramos * 35.274; 
+      var libras = kilogramos * 2.20462; 
+
+      // Mostrar el resultado
+      document.getElementById("resultado").innerHTML = `${kilogramos} kilogramos son ${onzas.toFixed(2)} onzas y ${libras.toFixed(2)} libras`;
+    }
+  </script>
+
+</body>
+</html>
